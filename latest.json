@@ -1,0 +1,13 @@
+{
+  "app": "Wrid MyReservation Desktop",
+  "version": "1.0.0",
+  "platform": "windows-x64",
+  "min_os": "Windows 10 64-bit",
+  "file_name": "WridMyReservation-1.0.0-x64.msi",
+  "size_bytes": 52199424,
+  "sha256": "b793c43c850302aa54e7ab018716e3c089fc0c57110b600feaf3724f81b4b78c",
+  "download_url": "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi",
+  "release_page": "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/tag/v1.0.0",
+  "silent_install": "msiexec /i WridMyReservation-1.0.0-x64.msi /qn",
+  "released_at": "2026-10-23"
+}

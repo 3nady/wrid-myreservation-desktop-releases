@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wrid MyReservation Installation</title>
+<style>
+  :root {
+    --brand: #4338CA; --brand-soft: #EEF2FF; --accent: #4F46E5;
+    --bg: #F7F7FA; --surface: #FFFFFF; --text: #1F2030; --muted: #6B6B7B;
+    --border: #E4E4EC; --code: #F1F1F8;
+    --ok: #047857; --ok-soft: #ECFDF5; --warn: #92400E; --warn-soft: #FFFBEB; --bad: #B91C1C; --bad-soft: #FEF2F2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --brand: #A5B4FC; --brand-soft: #1E1B4B; --accent: #A5B4FC;
+      --bg: #111218; --surface: #191A23; --text: #E8E9F2; --muted: #A3A5B5;
+      --border: #2D2F3E; --code: #22243A;
+      --ok: #6EE7B7; --ok-soft: #12291F; --warn: #FCD34D; --warn-soft: #2C2412; --bad: #FCA5A5; --bad-soft: #2E1515;
+    }
+  }
+  :root[data-theme="dark"] {
+    --brand: #A5B4FC; --brand-soft: #1E1B4B; --accent: #A5B4FC;
+    --bg: #111218; --surface: #191A23; --text: #E8E9F2; --muted: #A3A5B5;
+    --border: #2D2F3E; --code: #22243A;
+    --ok: #6EE7B7; --ok-soft: #12291F; --warn: #FCD34D; --warn-soft: #2C2412; --bad: #FCA5A5; --bad-soft: #2E1515;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.7 "Segoe UI", Tahoma, system-ui, sans-serif; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  header { background: #4F46E5; color: #fff; padding: 28px 0 24px; }
+  header .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .mark { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 13px;
+          background: linear-gradient(135deg, #4338CA, #818CF8); font-weight: 800; font-size: 22px; margin-inline-end: 12px; flex: none; }
+  h1 { margin: 0; font-size: 26px; line-height: 1.25; }
+  header p { margin: 4px 0 0; opacity: .88; }
+  .lang { border: 1px solid rgba(255,255,255,.55); background: transparent; color: #fff; border-radius: 999px;
+          padding: 6px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+  .lang:hover, .lang:focus-visible { background: rgba(255,255,255,.14); outline: none; }
+  nav { position: sticky; top: 0; z-index: 2; background: var(--surface); border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; gap: 6px; overflow-x: auto; padding-block: 8px; }
+  nav a { flex: none; text-decoration: none; color: var(--text); font-size: 13px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--border); }
+  nav a:hover { border-color: var(--brand); color: var(--brand); }
+  main { padding: 24px 0 48px; display: grid; gap: 18px; }
+  section { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; scroll-margin-top: 60px; min-width: 0; }
+  h2 { margin: 0 0 10px; font-size: 19px; color: var(--brand); display: flex; align-items: center; gap: 10px; }
+  .num { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 28px; border-radius: 9px;
+         background: var(--brand-soft); color: var(--brand); font-size: 14px; font-weight: 800; }
+  h3 { margin: 16px 0 6px; font-size: 15px; }
+  p { margin: 6px 0; overflow-wrap: anywhere; }
+  ol, ul { margin: 6px 0; padding-inline-start: 22px; }
+  li { margin: 4px 0; overflow-wrap: anywhere; }
+  code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 13px; background: var(--code); padding: 1px 6px; border-radius: 5px; direction: ltr; unicode-bidi: isolate; }
+  pre { background: var(--code); border-radius: 10px; padding: 12px 14px; overflow-x: auto; direction: ltr; text-align: left; margin: 8px 0; }
+  pre code { background: none; padding: 0; }
+  main a { color: var(--accent); font-weight: 600; }
+  .ltr { direction: ltr; unicode-bidi: isolate; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 14px; }
+  th, td { text-align: start; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; }
+  .tbl { overflow-x: auto; }
+  .note { border-radius: 10px; padding: 10px 14px; margin: 10px 0; border-inline-start: 4px solid; }
+  .note.warn { background: var(--warn-soft); border-color: var(--warn); }
+  .note.bad { background: var(--bad-soft); border-color: var(--bad); }
+  .note.ok { background: var(--ok-soft); border-color: var(--ok); }
+  .note .nt { font-weight: 700; margin-bottom: 2px; }
+  footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
+  [data-l] { display: none !important; }
+  html[data-lang="ar"] [data-l="ar"], html[data-lang="en"] [data-l="en"] { display: revert !important; }
+  @media print { nav, .lang { display: none; } section { break-inside: avoid; border: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap row">
+    <div style="display:flex;align-items:center">
+      <span class="mark">W</span>
+      <div><h1><span data-l="ar">تثبيت وريد حجوزات على جهاز Windows</span><span data-l="en">Installing Wrid MyReservation on a Windows PC</span></h1><p><span data-l="ar">إدارة الحجوزات · الإصدار 1.0.0 · Windows 10 و 11</span><span data-l="en">Reservations management · Version 1.0.0 · Windows 10 and 11</span></p></div>
+    </div>
+    <button class="lang" type="button" id="langBtn" aria-label="Switch language">English</button>
+  </div>
+</header>
+<nav aria-label="Sections"><div class="wrap"><a href="#req"><span data-l="ar">المتطلبات</span><span data-l="en">Requirements</span></a><a href="#get"><span data-l="ar">الحصول على ملف التثبيت</span><span data-l="en">Get the installer</span></a><a href="#install"><span data-l="ar">التثبيت</span><span data-l="en">Install</span></a><a href="#first"><span data-l="ar">أول تشغيل</span><span data-l="en">First run</span></a><a href="#printer"><span data-l="ar">إعداد طابعة الفواتير</span><span data-l="en">Set up the receipt printer</span></a><a href="#server"><span data-l="ar">عنوان الخادم</span><span data-l="en">Server address</span></a><a href="#update"><span data-l="ar">التحديث والإزالة</span><span data-l="en">Update and remove</span></a><a href="#trouble"><span data-l="ar">حل المشكلات</span><span data-l="en">Troubleshooting</span></a></div></nav>
+<main class="wrap">
+<section id="req"><h2><span class="num">1</span><span data-l="ar">المتطلبات</span><span data-l="en">Requirements</span></h2><ul data-l="ar"><li>جهاز يعمل بنظام Windows 10 أو Windows 11 بنسخة 64-بت.</li><li>صلاحية مسؤول (Administrator) على الجهاز مرة واحدة أثناء التثبيت.</li><li>مساحة فارغة 300 ميجابايت تقريباً.</li><li>اتصال بالإنترنت: كل البيانات (الحجوزات، الخدمات، العملاء...) على الخادم.</li><li>رقم جوال وكلمة مرور لحساب موظف في وريد حجوزات، نفس حساب تطبيق الجوال.</li><li>لا حاجة لتثبيت .NET أو أي برنامج آخر: كل ما يلزم موجود داخل المثبّت.</li></ul><ul data-l="en"><li>A PC running Windows 10 or Windows 11, 64-bit.</li><li>Administrator rights on the PC, once, during installation.</li><li>About 300 MB of free disk space.</li><li>An internet connection: all data (bookings, services, customers…) is on the server.</li><li>A Wrid staff account (mobile number and password), the same one as the mobile app.</li><li>No need to install .NET or anything else: the installer contains everything.</li></ul></section>
+<section id="get"><h2><span class="num">2</span><span data-l="ar">الحصول على ملف التثبيت</span><span data-l="en">Get the installer</span></h2><p data-l="ar">ملف التثبيت اسمه WridMyReservation-1.0.0-x64.msi (حوالي 50 ميجابايت). الرابط عام ولا يحتاج تسجيل دخول:</p><p data-l="en">The installer is WridMyReservation-1.0.0-x64.msi (about 50 MB). The link is public, no sign-in needed:</p><ol data-l="ar"><li>تنزيل WridMyReservation-1.0.0-x64.msi<br><a href="https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi<br>صفحة" class="ltr">https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi<br>صفحة</a> الإصدار: v1.0.0</li></ol><ol data-l="en"><li>Download WridMyReservation-1.0.0-x64.msi<br><a href="https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi<br>Release" class="ltr">https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi<br>Release</a> page: v1.0.0</li></ol><p data-l="ar">للتحقق من سلامة الملف (اختياري): SHA-256 = b793c43c850302aa54e7ab018716e3c089fc0c57110b600feaf3724f81b4b78c</p><p data-l="en">To check the file (optional): SHA-256 = b793c43c850302aa54e7ab018716e3c089fc0c57110b600feaf3724f81b4b78c</p></section>
+<section id="install"><h2><span class="num">3</span><span data-l="ar">التثبيت</span><span data-l="en">Install</span></h2><ol data-l="ar"><li>انقر نقراً مزدوجاً على WridMyReservation-1.0.0-x64.msi.</li><li>إذا ظهرت نافذة «حمى Windows جهاز الكمبيوتر» (SmartScreen): اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال». تظهر لأن الملف غير موقّع رقمياً بعد.</li><li>في نافذة الترحيب اضغط Next. اترك مجلد التثبيت كما هو (C:\Program Files\Wrid MyReservation) واضغط Next. في صفحة الخيارات اختر «تشغيل البرنامج بعد التثبيت» (مفعّل افتراضياً) و«إنشاء اختصار على سطح المكتب» (مفعّل افتراضياً) و«التشغيل تلقائياً مع بدء Windows» (غير مفعّل افتراضياً)، ثم Next وInstall.</li><li>وافق على طلب صلاحية المسؤول (UAC) بالضغط على نعم.</li><li>اضغط Finish. ستجد اختصار «Wrid وريد حجوزات» في قائمة ابدأ، وعلى سطح المكتب إذا اخترته.</li></ol><ol data-l="en"><li>Double-click WridMyReservation-1.0.0-x64.msi.</li><li>If &quot;Windows protected your PC&quot; (SmartScreen) appears: click More info, then Run anyway. It shows because the file is not code-signed yet.</li><li>On the welcome page click Next. Keep the install folder (C:\Program Files\Wrid MyReservation) and click Next. On the options page choose &quot;Launch after installation&quot; (on by default), &quot;Create desktop shortcut&quot; (on by default) and &quot;Start with Windows&quot; (off by default), then Next and Install.</li><li>Accept the administrator prompt (UAC) with Yes.</li><li>Click Finish. A &quot;Wrid وريد حجوزات&quot; shortcut is in the Start menu, and on the desktop if you chose it.</li></ol><h3 data-l="ar">تثبيت صامت (لعدة أجهزة)</h3><h3 data-l="en">Silent install (many PCs)</h3><p data-l="ar">من نافذة «موجّه الأوامر» بصلاحية المسؤول، في مجلد الملف:</p><p data-l="en">From an administrator Command Prompt, in the file&#x27;s folder:</p><pre><code>msiexec /i WridMyReservation-1.0.0-x64.msi /qn</code></pre><p data-l="ar">الخيارات في التثبيت الصامت: DESKTOP_SHORTCUT=0 بدون اختصار على سطح المكتب، وSTART_WITH_WINDOWS=1 للتشغيل مع بدء Windows. يُحفظ الاختيار للتحديثات القادمة.</p><p data-l="en">Options for a silent install: DESKTOP_SHORTCUT=0 for no desktop shortcut, START_WITH_WINDOWS=1 to start with Windows. The choice is kept for later updates.</p></section>
+<section id="first"><h2><span class="num">4</span><span data-l="ar">أول تشغيل</span><span data-l="en">First run</span></h2><ol data-l="ar"><li>افتح «Wrid وريد حجوزات». اللغة الافتراضية العربية، ويمكن تغييرها من الإعدادات.</li><li>أدخل رقم الجوال (مثال 05XXXXXXXX) وكلمة المرور، ثم اضغط تسجيل الدخول.</li><li>تظهر لوحة التحكم. القائمة الجانبية فيها الحجوزات والخدمات والعملاء وبقية الأقسام حسب صلاحيات حسابك، وقسم الدايت للشركات التي تعمل بالدايت فقط.</li></ol><ol data-l="en"><li>Open &quot;Wrid وريد حجوزات&quot;. It starts in Arabic; Settings switches the language.</li><li>Enter the mobile number (e.g. 05XXXXXXXX) and the password, then sign in.</li><li>The dashboard opens. The side menu has bookings, services, customers and the other sections your account&#x27;s permissions allow; the Diet section shows only for diet companies.</li></ol><div class="note ok"><div class="nt"><span data-l="ar">تبقى مسجّلاً</span><span data-l="en">You stay signed in</span></div><span data-l="ar">الجلسة محفوظة ومشفّرة لمستخدم Windows الحالي، فلا يُطلب الدخول عند كل تشغيل. كل مستخدم Windows على الجهاز له جلسته وإعداداته.</span><span data-l="en">The session is saved, encrypted for the current Windows user, so you are not asked to sign in at every start. Each Windows user on the PC has their own session and settings.</span></div></section>
+<section id="printer"><h2><span class="num">5</span><span data-l="ar">إعداد طابعة الفواتير</span><span data-l="en">Set up the receipt printer</span></h2><ol data-l="ar"><li>من القائمة الجانبية افتح الحساب ← إعدادات الطابعة.</li><li>اختر طريقة الاتصال:</li></ol><ol data-l="en"><li>From the side menu open Account → Printer Settings.</li><li>Choose the connection:</li></ol><div class="tbl"><table><tr><th><span data-l="ar">الطريقة</span><span data-l="en">Connection</span></th><th><span data-l="ar">متى تستخدمها</span><span data-l="en">When to use it</span></th></tr><tr><td><span data-l="ar">USB</span><span data-l="en">USB</span></td><td><span data-l="ar">طابعة حرارية موصولة بـ USB. ثبّت تعريفها في Windows أولاً، ثم اخترها من «الطابعات المثبتة في Windows». تُرسل إليها الفاتورة بأوامر ESC/POS مباشرة.</span><span data-l="en">A USB thermal printer. Install its driver in Windows first, then pick it from &quot;Printers installed in Windows&quot;. The receipt is sent as raw ESC/POS.</span></td></tr><tr><td><span data-l="ar">واي فاي / شبكة</span><span data-l="en">WiFi / Network</span></td><td><span data-l="ar">طابعة على الشبكة. أدخل عنوان IP للطابعة والمنفذ (عادة 9100). لا تحتاج تعريف Windows.</span><span data-l="en">A printer on the network. Enter the printer IP address and port (usually 9100). No Windows driver needed.</span></td></tr><tr><td><span data-l="ar">بلوتوث</span><span data-l="en">Bluetooth</span></td><td><span data-l="ar">اقرن الطابعة أولاً من إعدادات البلوتوث في Windows، فتظهر كمنفذ تسلسلي (COM): اختر المنفذ الصادر.</span><span data-l="en">Pair the printer in Windows Bluetooth settings first. It then appears as a serial (COM) port: choose its outgoing port.</span></td></tr></table></div><ol data-l="ar" start="3"><li>اختر حجم الورق: 58 أو 80 أو 104 مم.</li><li>فعّل «تذكرة منفصلة لكل خدمة» إذا أردت ورقة لكل خدمة بمقدّمها ووقتها بعد الفاتورة.</li><li>اضغط طباعة تجريبية وتأكد أن النص العربي واضح وأن رمز QR يُقرأ بالجوال.</li></ol><ol data-l="en" start="3"><li>Choose the Paper Size: 58, 80 or 104 mm.</li><li>Turn on &quot;Separate ticket per service&quot; for a slip per service with its provider and time after the invoice.</li><li>Press Test Print and check the Arabic text is clear and the QR code scans with a phone.</li></ol></section>
+<section id="server"><h2><span class="num">6</span><span data-l="ar">عنوان الخادم</span><span data-l="en">Server address</span></h2><p data-l="ar">يتصل البرنامج افتراضياً بالخادم <a href="https://api.dev.wrid.sa." class="ltr">https://api.dev.wrid.sa.</a> لا تغيّره إلا بطلب من الدعم الفني. طريقتان للتغيير:</p><p data-l="en">By default the app connects to <a href="https://api.dev.wrid.sa." class="ltr">https://api.dev.wrid.sa.</a> Change it only when support asks you to. Two ways:</p><ul data-l="ar"><li>لهذا المستخدم: الإعدادات ← عنوان الخادم ← حفظ. يُسجَّل خروجك بعد التغيير.</li><li>لكل مستخدمي الجهاز: افتح المفكرة كمسؤول، وعدّل الملف C:\Program Files\Wrid MyReservation\appsettings.json. التحديثات اللاحقة تحافظ على هذا التعديل.</li></ul><ul data-l="en"><li>For this user: Settings → Server address → Save. You are signed out after the change.</li><li>For every user of the PC: open Notepad as administrator and edit C:\Program Files\Wrid MyReservation\appsettings.json. Later updates keep the edit.</li></ul><pre><code>{
+  &quot;ApiUrl&quot;: &quot;https://api.dev.wrid.sa&quot;
+}</code></pre><div class="note bad"><div class="nt"><span data-l="ar">تنبيه</span><span data-l="en">Caution</span></div><span data-l="ar">الخادم api.dev.wrid.sa يعمل على قاعدة البيانات الحقيقية. كل حجز أو دفعة أو فاتورة تجريبية تُسجَّل فعلاً لدى الشركة. جرّب بحساب شركة تجريبية.</span><span data-l="en">api.dev.wrid.sa runs on the real database. Every test booking, payment or invoice is recorded for the company. Test with a test company account.</span></div></section>
+<section id="update"><h2><span class="num">7</span><span data-l="ar">التحديث والإزالة</span><span data-l="en">Update and remove</span></h2><ul data-l="ar"><li>التحديث: شغّل ملف MSI للإصدار الأحدث بنفس الطريقة. يحلّ محل القديم مباشرة وتبقى الجلسة والإعدادات والطابعة وخيارات التثبيت كما هي. لا داعي لإزالة القديم أولاً. لا يمكن تثبيت إصدار أقدم فوق إصدار أحدث.</li><li>الإزالة: الإعدادات ← التطبيقات ← «Wrid وريد حجوزات» ← إلغاء التثبيت.</li><li>بيانات المستخدم (الجلسة، الإعدادات، الطابعة، السجلات) في %LOCALAPPDATA%\WridMyReservation، ولا تُحذف عند الإزالة. احذف المجلد يدوياً لإزالتها بالكامل.</li></ul><ul data-l="en"><li>Update: run the newer version&#x27;s MSI the same way. It replaces the old one in place; the session, settings, printer and install options are kept. No need to uninstall first. An older version can&#x27;t be installed over a newer one.</li><li>Remove: Settings → Apps → &quot;Wrid وريد حجوزات&quot; → Uninstall.</li><li>User data (session, settings, printer, logs) is in %LOCALAPPDATA%\WridMyReservation and is not deleted on uninstall. Delete that folder by hand to remove it completely.</li></ul></section>
+<section id="trouble"><h2><span class="num">8</span><span data-l="ar">حل المشكلات</span><span data-l="en">Troubleshooting</span></h2><div class="tbl"><table><tr><th><span data-l="ar">المشكلة</span><span data-l="en">Problem</span></th><th><span data-l="ar">الحل</span><span data-l="en">What to do</span></th></tr><tr><td><span data-l="ar">Windows يمنع تشغيل المثبّت</span><span data-l="en">Windows blocks the installer</span></td><td><span data-l="ar">«مزيد من المعلومات» ← «تشغيل على أي حال». إذا لم يظهر الزر: انقر الملف بالزر الأيمن ← خصائص ← فعّل «إلغاء الحظر» ← موافق.</span><span data-l="en">&quot;More info&quot; → &quot;Run anyway&quot;. If there&#x27;s no such button: right-click the file → Properties → tick &quot;Unblock&quot; → OK.</span></td></tr><tr><td><span data-l="ar">قسم لا يظهر في القائمة</span><span data-l="en">A section is missing from the menu</span></td><td><span data-l="ar">الأقسام تظهر حسب صلاحيات الحساب في الشركة، تماماً كتطبيق الجوال. يضيفها مالك الحساب من الويب.</span><span data-l="en">Sections follow the account&#x27;s permissions in the company, exactly like the mobile app. The owner adds them from the web.</span></td></tr><tr><td><span data-l="ar">الطابعة غير موجودة</span><span data-l="en">Printer not found</span></td><td><span data-l="ar">ثبّت تعريفها أو اقرنها في Windows، ثم اخترها من جديد في إعدادات الطابعة.</span><span data-l="en">Install its driver or pair it in Windows, then pick it again in Printer Settings.</span></td></tr><tr><td><span data-l="ar">تعذّر الوصول إلى الطابعة</span><span data-l="en">Could not reach the printer</span></td><td><span data-l="ar">تأكد أن الطابعة تعمل وأن عنوان IP صحيح وأن الجهاز على نفس الشبكة.</span><span data-l="en">Check the printer is on, the IP address is right and the PC is on the same network.</span></td></tr></table></div><p data-l="ar">إذا احتجت الدعم الفني، أرسل الملف %LOCALAPPDATA%\WridMyReservation\errors.log إن وُجد. للوصول إليه: اضغط Win + R واكتب %LOCALAPPDATA%\WridMyReservation.</p><p data-l="en">If you contact support, send %LOCALAPPDATA%\WridMyReservation\errors.log if it exists. To open the folder: press Win + R and type %LOCALAPPDATA%\WridMyReservation.</p></section>
+</main>
+<footer><span data-l="ar">Wrid وريد حجوزات · نسخة سطح المكتب 1.0.0 · الدعم عبر واتساب: +966 55 690 0966</span><span data-l="en">Wrid وريد حجوزات · Desktop 1.0.0 · WhatsApp support: +966 55 690 0966</span></footer>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    function apply(lang) {
+      root.setAttribute('data-lang', lang);
+      root.lang = lang;
+      root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      btn.textContent = lang === 'ar' ? 'English' : 'العربية';
+      document.title = lang === 'ar' ? 'تثبيت وريد حجوزات' : 'Wrid MyReservation Installation';
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('wridres-guide-lang'); } catch (e) {}
+    apply(saved === 'en' ? 'en' : 'ar');
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'ar' ? 'en' : 'ar';
+      apply(next);
+      try { localStorage.setItem('wridres-guide-lang', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

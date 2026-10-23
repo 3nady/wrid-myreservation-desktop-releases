@@ -1,0 +1,378 @@
+{
+  "app": "Wrid MyReservation Desktop",
+  "version": "1.0.0",
+  "download_url": "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi",
+  "release_page": "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/tag/v1.0.0",
+  "file_name": "WridMyReservation-1.0.0-x64.msi",
+  "size_bytes": 52199424,
+  "sha256": "b793c43c850302aa54e7ab018716e3c089fc0c57110b600feaf3724f81b4b78c",
+  "title": {
+    "ar": "تثبيت وريد حجوزات على جهاز Windows",
+    "en": "Installing Wrid MyReservation on a Windows PC"
+  },
+  "subtitle": {
+    "ar": "إدارة الحجوزات · الإصدار 1.0.0 · Windows 10 و 11",
+    "en": "Reservations management · Version 1.0.0 · Windows 10 and 11"
+  },
+  "default_language": "ar",
+  "sections": [
+    {
+      "id": "req",
+      "title": {
+        "ar": "المتطلبات",
+        "en": "Requirements"
+      },
+      "blocks": [
+        {
+          "type": "list",
+          "ar": [
+            "جهاز يعمل بنظام Windows 10 أو Windows 11 بنسخة 64-بت.",
+            "صلاحية مسؤول (Administrator) على الجهاز مرة واحدة أثناء التثبيت.",
+            "مساحة فارغة 300 ميجابايت تقريباً.",
+            "اتصال بالإنترنت: كل البيانات (الحجوزات، الخدمات، العملاء...) على الخادم.",
+            "رقم جوال وكلمة مرور لحساب موظف في وريد حجوزات، نفس حساب تطبيق الجوال.",
+            "لا حاجة لتثبيت .NET أو أي برنامج آخر: كل ما يلزم موجود داخل المثبّت."
+          ],
+          "en": [
+            "A PC running Windows 10 or Windows 11, 64-bit.",
+            "Administrator rights on the PC, once, during installation.",
+            "About 300 MB of free disk space.",
+            "An internet connection: all data (bookings, services, customers…) is on the server.",
+            "A Wrid staff account (mobile number and password), the same one as the mobile app.",
+            "No need to install .NET or anything else: the installer contains everything."
+          ]
+        }
+      ],
+      "number": 1
+    },
+    {
+      "id": "get",
+      "title": {
+        "ar": "الحصول على ملف التثبيت",
+        "en": "Get the installer"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ar": "ملف التثبيت اسمه WridMyReservation-1.0.0-x64.msi (حوالي 50 ميجابايت). الرابط عام ولا يحتاج تسجيل دخول:",
+          "en": "The installer is WridMyReservation-1.0.0-x64.msi (about 50 MB). The link is public, no sign-in needed:"
+        },
+        {
+          "type": "steps",
+          "ar": [
+            "تنزيل WridMyReservation-1.0.0-x64.msi\nhttps://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi\nصفحة الإصدار: v1.0.0"
+          ],
+          "en": [
+            "Download WridMyReservation-1.0.0-x64.msi\nhttps://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi\nRelease page: v1.0.0"
+          ],
+          "links": [
+            "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi",
+            "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/tag/v1.0.0"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "ar": "للتحقق من سلامة الملف (اختياري): SHA-256 = b793c43c850302aa54e7ab018716e3c089fc0c57110b600feaf3724f81b4b78c",
+          "en": "To check the file (optional): SHA-256 = b793c43c850302aa54e7ab018716e3c089fc0c57110b600feaf3724f81b4b78c"
+        }
+      ],
+      "number": 2
+    },
+    {
+      "id": "install",
+      "title": {
+        "ar": "التثبيت",
+        "en": "Install"
+      },
+      "blocks": [
+        {
+          "type": "steps",
+          "ar": [
+            "انقر نقراً مزدوجاً على WridMyReservation-1.0.0-x64.msi.",
+            "إذا ظهرت نافذة «حمى Windows جهاز الكمبيوتر» (SmartScreen): اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال». تظهر لأن الملف غير موقّع رقمياً بعد.",
+            "في نافذة الترحيب اضغط Next. اترك مجلد التثبيت كما هو (C:\\Program Files\\Wrid MyReservation) واضغط Next. في صفحة الخيارات اختر «تشغيل البرنامج بعد التثبيت» (مفعّل افتراضياً) و«إنشاء اختصار على سطح المكتب» (مفعّل افتراضياً) و«التشغيل تلقائياً مع بدء Windows» (غير مفعّل افتراضياً)، ثم Next وInstall.",
+            "وافق على طلب صلاحية المسؤول (UAC) بالضغط على نعم.",
+            "اضغط Finish. ستجد اختصار «Wrid وريد حجوزات» في قائمة ابدأ، وعلى سطح المكتب إذا اخترته."
+          ],
+          "en": [
+            "Double-click WridMyReservation-1.0.0-x64.msi.",
+            "If \"Windows protected your PC\" (SmartScreen) appears: click More info, then Run anyway. It shows because the file is not code-signed yet.",
+            "On the welcome page click Next. Keep the install folder (C:\\Program Files\\Wrid MyReservation) and click Next. On the options page choose \"Launch after installation\" (on by default), \"Create desktop shortcut\" (on by default) and \"Start with Windows\" (off by default), then Next and Install.",
+            "Accept the administrator prompt (UAC) with Yes.",
+            "Click Finish. A \"Wrid وريد حجوزات\" shortcut is in the Start menu, and on the desktop if you chose it."
+          ]
+        },
+        {
+          "type": "heading",
+          "ar": "تثبيت صامت (لعدة أجهزة)",
+          "en": "Silent install (many PCs)"
+        },
+        {
+          "type": "paragraph",
+          "ar": "من نافذة «موجّه الأوامر» بصلاحية المسؤول، في مجلد الملف:",
+          "en": "From an administrator Command Prompt, in the file's folder:"
+        },
+        {
+          "type": "code",
+          "text": "msiexec /i WridMyReservation-1.0.0-x64.msi /qn"
+        },
+        {
+          "type": "paragraph",
+          "ar": "الخيارات في التثبيت الصامت: DESKTOP_SHORTCUT=0 بدون اختصار على سطح المكتب، وSTART_WITH_WINDOWS=1 للتشغيل مع بدء Windows. يُحفظ الاختيار للتحديثات القادمة.",
+          "en": "Options for a silent install: DESKTOP_SHORTCUT=0 for no desktop shortcut, START_WITH_WINDOWS=1 to start with Windows. The choice is kept for later updates."
+        }
+      ],
+      "number": 3
+    },
+    {
+      "id": "first",
+      "title": {
+        "ar": "أول تشغيل",
+        "en": "First run"
+      },
+      "blocks": [
+        {
+          "type": "steps",
+          "ar": [
+            "افتح «Wrid وريد حجوزات». اللغة الافتراضية العربية، ويمكن تغييرها من الإعدادات.",
+            "أدخل رقم الجوال (مثال 05XXXXXXXX) وكلمة المرور، ثم اضغط تسجيل الدخول.",
+            "تظهر لوحة التحكم. القائمة الجانبية فيها الحجوزات والخدمات والعملاء وبقية الأقسام حسب صلاحيات حسابك، وقسم الدايت للشركات التي تعمل بالدايت فقط."
+          ],
+          "en": [
+            "Open \"Wrid وريد حجوزات\". It starts in Arabic; Settings switches the language.",
+            "Enter the mobile number (e.g. 05XXXXXXXX) and the password, then sign in.",
+            "The dashboard opens. The side menu has bookings, services, customers and the other sections your account's permissions allow; the Diet section shows only for diet companies."
+          ]
+        },
+        {
+          "type": "note",
+          "tone": "info",
+          "title": {
+            "ar": "تبقى مسجّلاً",
+            "en": "You stay signed in"
+          },
+          "ar": "الجلسة محفوظة ومشفّرة لمستخدم Windows الحالي، فلا يُطلب الدخول عند كل تشغيل. كل مستخدم Windows على الجهاز له جلسته وإعداداته.",
+          "en": "The session is saved, encrypted for the current Windows user, so you are not asked to sign in at every start. Each Windows user on the PC has their own session and settings."
+        }
+      ],
+      "number": 4
+    },
+    {
+      "id": "printer",
+      "title": {
+        "ar": "إعداد طابعة الفواتير",
+        "en": "Set up the receipt printer"
+      },
+      "blocks": [
+        {
+          "type": "steps",
+          "ar": [
+            "من القائمة الجانبية افتح الحساب ← إعدادات الطابعة.",
+            "اختر طريقة الاتصال:"
+          ],
+          "en": [
+            "From the side menu open Account → Printer Settings.",
+            "Choose the connection:"
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            {
+              "ar": "الطريقة",
+              "en": "Connection"
+            },
+            {
+              "ar": "متى تستخدمها",
+              "en": "When to use it"
+            }
+          ],
+          "rows": [
+            [
+              {
+                "ar": "USB",
+                "en": "USB"
+              },
+              {
+                "ar": "طابعة حرارية موصولة بـ USB. ثبّت تعريفها في Windows أولاً، ثم اخترها من «الطابعات المثبتة في Windows». تُرسل إليها الفاتورة بأوامر ESC/POS مباشرة.",
+                "en": "A USB thermal printer. Install its driver in Windows first, then pick it from \"Printers installed in Windows\". The receipt is sent as raw ESC/POS."
+              }
+            ],
+            [
+              {
+                "ar": "واي فاي / شبكة",
+                "en": "WiFi / Network"
+              },
+              {
+                "ar": "طابعة على الشبكة. أدخل عنوان IP للطابعة والمنفذ (عادة 9100). لا تحتاج تعريف Windows.",
+                "en": "A printer on the network. Enter the printer IP address and port (usually 9100). No Windows driver needed."
+              }
+            ],
+            [
+              {
+                "ar": "بلوتوث",
+                "en": "Bluetooth"
+              },
+              {
+                "ar": "اقرن الطابعة أولاً من إعدادات البلوتوث في Windows، فتظهر كمنفذ تسلسلي (COM): اختر المنفذ الصادر.",
+                "en": "Pair the printer in Windows Bluetooth settings first. It then appears as a serial (COM) port: choose its outgoing port."
+              }
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "ar": [
+            "اختر حجم الورق: 58 أو 80 أو 104 مم.",
+            "فعّل «تذكرة منفصلة لكل خدمة» إذا أردت ورقة لكل خدمة بمقدّمها ووقتها بعد الفاتورة.",
+            "اضغط طباعة تجريبية وتأكد أن النص العربي واضح وأن رمز QR يُقرأ بالجوال."
+          ],
+          "en": [
+            "Choose the Paper Size: 58, 80 or 104 mm.",
+            "Turn on \"Separate ticket per service\" for a slip per service with its provider and time after the invoice.",
+            "Press Test Print and check the Arabic text is clear and the QR code scans with a phone."
+          ],
+          "start": 3
+        }
+      ],
+      "number": 5
+    },
+    {
+      "id": "server",
+      "title": {
+        "ar": "عنوان الخادم",
+        "en": "Server address"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "ar": "يتصل البرنامج افتراضياً بالخادم https://api.dev.wrid.sa. لا تغيّره إلا بطلب من الدعم الفني. طريقتان للتغيير:",
+          "en": "By default the app connects to https://api.dev.wrid.sa. Change it only when support asks you to. Two ways:"
+        },
+        {
+          "type": "list",
+          "ar": [
+            "لهذا المستخدم: الإعدادات ← عنوان الخادم ← حفظ. يُسجَّل خروجك بعد التغيير.",
+            "لكل مستخدمي الجهاز: افتح المفكرة كمسؤول، وعدّل الملف C:\\Program Files\\Wrid MyReservation\\appsettings.json. التحديثات اللاحقة تحافظ على هذا التعديل."
+          ],
+          "en": [
+            "For this user: Settings → Server address → Save. You are signed out after the change.",
+            "For every user of the PC: open Notepad as administrator and edit C:\\Program Files\\Wrid MyReservation\\appsettings.json. Later updates keep the edit."
+          ]
+        },
+        {
+          "type": "code",
+          "text": "{\n  \"ApiUrl\": \"https://api.dev.wrid.sa\"\n}"
+        },
+        {
+          "type": "note",
+          "tone": "danger",
+          "title": {
+            "ar": "تنبيه",
+            "en": "Caution"
+          },
+          "ar": "الخادم api.dev.wrid.sa يعمل على قاعدة البيانات الحقيقية. كل حجز أو دفعة أو فاتورة تجريبية تُسجَّل فعلاً لدى الشركة. جرّب بحساب شركة تجريبية.",
+          "en": "api.dev.wrid.sa runs on the real database. Every test booking, payment or invoice is recorded for the company. Test with a test company account."
+        }
+      ],
+      "number": 6
+    },
+    {
+      "id": "update",
+      "title": {
+        "ar": "التحديث والإزالة",
+        "en": "Update and remove"
+      },
+      "blocks": [
+        {
+          "type": "list",
+          "ar": [
+            "التحديث: شغّل ملف MSI للإصدار الأحدث بنفس الطريقة. يحلّ محل القديم مباشرة وتبقى الجلسة والإعدادات والطابعة وخيارات التثبيت كما هي. لا داعي لإزالة القديم أولاً. لا يمكن تثبيت إصدار أقدم فوق إصدار أحدث.",
+            "الإزالة: الإعدادات ← التطبيقات ← «Wrid وريد حجوزات» ← إلغاء التثبيت.",
+            "بيانات المستخدم (الجلسة، الإعدادات، الطابعة، السجلات) في %LOCALAPPDATA%\\WridMyReservation، ولا تُحذف عند الإزالة. احذف المجلد يدوياً لإزالتها بالكامل."
+          ],
+          "en": [
+            "Update: run the newer version's MSI the same way. It replaces the old one in place; the session, settings, printer and install options are kept. No need to uninstall first. An older version can't be installed over a newer one.",
+            "Remove: Settings → Apps → \"Wrid وريد حجوزات\" → Uninstall.",
+            "User data (session, settings, printer, logs) is in %LOCALAPPDATA%\\WridMyReservation and is not deleted on uninstall. Delete that folder by hand to remove it completely."
+          ]
+        }
+      ],
+      "number": 7
+    },
+    {
+      "id": "trouble",
+      "title": {
+        "ar": "حل المشكلات",
+        "en": "Troubleshooting"
+      },
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            {
+              "ar": "المشكلة",
+              "en": "Problem"
+            },
+            {
+              "ar": "الحل",
+              "en": "What to do"
+            }
+          ],
+          "rows": [
+            [
+              {
+                "ar": "Windows يمنع تشغيل المثبّت",
+                "en": "Windows blocks the installer"
+              },
+              {
+                "ar": "«مزيد من المعلومات» ← «تشغيل على أي حال». إذا لم يظهر الزر: انقر الملف بالزر الأيمن ← خصائص ← فعّل «إلغاء الحظر» ← موافق.",
+                "en": "\"More info\" → \"Run anyway\". If there's no such button: right-click the file → Properties → tick \"Unblock\" → OK."
+              }
+            ],
+            [
+              {
+                "ar": "قسم لا يظهر في القائمة",
+                "en": "A section is missing from the menu"
+              },
+              {
+                "ar": "الأقسام تظهر حسب صلاحيات الحساب في الشركة، تماماً كتطبيق الجوال. يضيفها مالك الحساب من الويب.",
+                "en": "Sections follow the account's permissions in the company, exactly like the mobile app. The owner adds them from the web."
+              }
+            ],
+            [
+              {
+                "ar": "الطابعة غير موجودة",
+                "en": "Printer not found"
+              },
+              {
+                "ar": "ثبّت تعريفها أو اقرنها في Windows، ثم اخترها من جديد في إعدادات الطابعة.",
+                "en": "Install its driver or pair it in Windows, then pick it again in Printer Settings."
+              }
+            ],
+            [
+              {
+                "ar": "تعذّر الوصول إلى الطابعة",
+                "en": "Could not reach the printer"
+              },
+              {
+                "ar": "تأكد أن الطابعة تعمل وأن عنوان IP صحيح وأن الجهاز على نفس الشبكة.",
+                "en": "Check the printer is on, the IP address is right and the PC is on the same network."
+              }
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "ar": "إذا احتجت الدعم الفني، أرسل الملف %LOCALAPPDATA%\\WridMyReservation\\errors.log إن وُجد. للوصول إليه: اضغط Win + R واكتب %LOCALAPPDATA%\\WridMyReservation.",
+          "en": "If you contact support, send %LOCALAPPDATA%\\WridMyReservation\\errors.log if it exists. To open the folder: press Win + R and type %LOCALAPPDATA%\\WridMyReservation."
+        }
+      ],
+      "number": 8
+    }
+  ],
+  "footer": {
+    "ar": "Wrid وريد حجوزات · نسخة سطح المكتب 1.0.0 · الدعم عبر واتساب: +966 55 690 0966",
+    "en": "Wrid وريد حجوزات · Desktop 1.0.0 · WhatsApp support: +966 55 690 0966"
+  }
+}
