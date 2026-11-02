@@ -1,18 +1,18 @@
 {
   "app": "Wrid MyReservation Desktop",
-  "version": "1.0.0",
-  "download_url": "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi",
-  "release_page": "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/tag/v1.0.0",
-  "file_name": "WridMyReservation-1.0.0-x64.msi",
-  "size_bytes": 52199424,
-  "sha256": "b793c43c850302aa54e7ab018716e3c089fc0c57110b600feaf3724f81b4b78c",
+  "version": "1.0.1",
+  "download_url": "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.1/WridMyReservation-1.0.1-x64.msi",
+  "release_page": "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/tag/v1.0.1",
+  "file_name": "WridMyReservation-1.0.1-x64.msi",
+  "size_bytes": 52187136,
+  "sha256": "363d3fbab964b45b50ae813b01df6cca5274ac2e48a2345ab9c1ebe5c6f48f8e",
   "title": {
     "ar": "تثبيت وريد حجوزات على جهاز Windows",
     "en": "Installing Wrid MyReservation on a Windows PC"
   },
   "subtitle": {
-    "ar": "إدارة الحجوزات · الإصدار 1.0.0 · Windows 10 و 11",
-    "en": "Reservations management · Version 1.0.0 · Windows 10 and 11"
+    "ar": "إدارة الحجوزات · الإصدار 1.0.1 · Windows 10 و 11",
+    "en": "Reservations management · Version 1.0.1 · Windows 10 and 11"
   },
   "default_language": "ar",
   "sections": [
@@ -54,26 +54,26 @@
       "blocks": [
         {
           "type": "paragraph",
-          "ar": "ملف التثبيت اسمه WridMyReservation-1.0.0-x64.msi (حوالي 50 ميجابايت). الرابط عام ولا يحتاج تسجيل دخول:",
-          "en": "The installer is WridMyReservation-1.0.0-x64.msi (about 50 MB). The link is public, no sign-in needed:"
+          "ar": "ملف التثبيت اسمه WridMyReservation-1.0.1-x64.msi (حوالي 50 ميجابايت). الرابط عام ولا يحتاج تسجيل دخول:",
+          "en": "The installer is WridMyReservation-1.0.1-x64.msi (about 50 MB). The link is public, no sign-in needed:"
         },
         {
           "type": "steps",
           "ar": [
-            "تنزيل WridMyReservation-1.0.0-x64.msi\nhttps://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi\nصفحة الإصدار: v1.0.0"
+            "تنزيل WridMyReservation-1.0.1-x64.msi\nhttps://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.1/WridMyReservation-1.0.1-x64.msi\nصفحة الإصدار: v1.0.1"
           ],
           "en": [
-            "Download WridMyReservation-1.0.0-x64.msi\nhttps://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi\nRelease page: v1.0.0"
+            "Download WridMyReservation-1.0.1-x64.msi\nhttps://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.1/WridMyReservation-1.0.1-x64.msi\nRelease page: v1.0.1"
           ],
           "links": [
-            "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.0/WridMyReservation-1.0.0-x64.msi",
-            "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/tag/v1.0.0"
+            "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/download/v1.0.1/WridMyReservation-1.0.1-x64.msi",
+            "https://github.com/3nady/wrid-myreservation-desktop-releases/releases/tag/v1.0.1"
           ]
         },
         {
           "type": "paragraph",
-          "ar": "للتحقق من سلامة الملف (اختياري): SHA-256 = b793c43c850302aa54e7ab018716e3c089fc0c57110b600feaf3724f81b4b78c",
-          "en": "To check the file (optional): SHA-256 = b793c43c850302aa54e7ab018716e3c089fc0c57110b600feaf3724f81b4b78c"
+          "ar": "للتحقق من سلامة الملف (اختياري): SHA-256 = 363d3fbab964b45b50ae813b01df6cca5274ac2e48a2345ab9c1ebe5c6f48f8e",
+          "en": "To check the file (optional): SHA-256 = 363d3fbab964b45b50ae813b01df6cca5274ac2e48a2345ab9c1ebe5c6f48f8e"
         }
       ],
       "number": 2
@@ -88,14 +88,14 @@
         {
           "type": "steps",
           "ar": [
-            "انقر نقراً مزدوجاً على WridMyReservation-1.0.0-x64.msi.",
+            "انقر نقراً مزدوجاً على WridMyReservation-1.0.1-x64.msi.",
             "إذا ظهرت نافذة «حمى Windows جهاز الكمبيوتر» (SmartScreen): اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال». تظهر لأن الملف غير موقّع رقمياً بعد.",
             "في نافذة الترحيب اضغط Next. اترك مجلد التثبيت كما هو (C:\\Program Files\\Wrid MyReservation) واضغط Next. في صفحة الخيارات اختر «تشغيل البرنامج بعد التثبيت» (مفعّل افتراضياً) و«إنشاء اختصار على سطح المكتب» (مفعّل افتراضياً) و«التشغيل تلقائياً مع بدء Windows» (غير مفعّل افتراضياً)، ثم Next وInstall.",
             "وافق على طلب صلاحية المسؤول (UAC) بالضغط على نعم.",
             "اضغط Finish. ستجد اختصار «Wrid وريد حجوزات» في قائمة ابدأ، وعلى سطح المكتب إذا اخترته."
           ],
           "en": [
-            "Double-click WridMyReservation-1.0.0-x64.msi.",
+            "Double-click WridMyReservation-1.0.1-x64.msi.",
             "If \"Windows protected your PC\" (SmartScreen) appears: click More info, then Run anyway. It shows because the file is not code-signed yet.",
             "On the welcome page click Next. Keep the install folder (C:\\Program Files\\Wrid MyReservation) and click Next. On the options page choose \"Launch after installation\" (on by default), \"Create desktop shortcut\" (on by default) and \"Start with Windows\" (off by default), then Next and Install.",
             "Accept the administrator prompt (UAC) with Yes.",
@@ -114,7 +114,7 @@
         },
         {
           "type": "code",
-          "text": "msiexec /i WridMyReservation-1.0.0-x64.msi /qn"
+          "text": "msiexec /i WridMyReservation-1.0.1-x64.msi /qn"
         },
         {
           "type": "paragraph",
@@ -372,7 +372,7 @@
     }
   ],
   "footer": {
-    "ar": "Wrid وريد حجوزات · نسخة سطح المكتب 1.0.0 · الدعم عبر واتساب: +966 55 690 0966",
-    "en": "Wrid وريد حجوزات · Desktop 1.0.0 · WhatsApp support: +966 55 690 0966"
+    "ar": "Wrid وريد حجوزات · نسخة سطح المكتب 1.0.1 · الدعم عبر واتساب: +966 55 690 0966",
+    "en": "Wrid وريد حجوزات · Desktop 1.0.1 · WhatsApp support: +966 55 690 0966"
   }
 }
